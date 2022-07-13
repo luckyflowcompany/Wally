@@ -34,21 +34,21 @@ public class Zoom : MonoBehaviour {
         float clampX = 0;
         if (bottomLeft.x < -spriteWidth) {
             clampX = bottomLeft.x + spriteWidth;
-            Debug.Log($"clampX1::{clampX}");
+            //Debug.Log($"clampX1::{clampX}");
         }
         else if (topRight.x > spriteWidth) {
             clampX = topRight.x - spriteWidth;
-            Debug.Log($"clampX2::{clampX}");
+            //Debug.Log($"clampX2::{clampX}");
         }
 
         float clampY = 0;
         if (bottomLeft.y < -spriteHeight) {
             clampY = bottomLeft.y + spriteHeight;
-            Debug.Log($"clampY1::{clampY}");
+            //Debug.Log($"clampY1::{clampY}");
         }
         else if (topRight.y > spriteHeight) {
             clampY = topRight.y - spriteHeight;
-            Debug.Log($"clampX2::{clampY}");
+            //Debug.Log($"clampX2::{clampY}");
         }
 
         transform.Translate(new Vector3(-clampX, -clampY, 0));
