@@ -1,34 +1,33 @@
-﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class ViewDrag : MonoBehaviour {
+public class Zoom : MonoBehaviour {
     public SpriteRenderer targetSprite;
 
-    private Vector3 dragOrigin; //Where are we moving?
-    private Vector3 clickOrigin = Vector3.zero; //Where are we starting?
-    private Vector3 basePos = Vector3.zero; //Where should the camera be initially?
+    public float zoomSpeed = 10f;
 
-    void Update() {
-        if (Input.GetMouseButton(0)) {
-            if (clickOrigin == Vector3.zero) {
-                clickOrigin = Input.mousePosition;
-                basePos = transform.position;
-            }
-            dragOrigin = Input.mousePosition;
+    private Camera cam;
+    private void Start() {
+        cam = GetComponent<Camera>();
+    }
+
+    private void Update() {
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            cam.orthographicSize += zoomSpeed * Time.deltaTime;
         }
-
-        if (!Input.GetMouseButton(0)) {
-            clickOrigin = Vector3.zero;
+        else if (Input.GetKey(KeyCode.UpArrow)) {
+            cam.orthographicSize -= zoomSpeed * Time.deltaTime;
+        }
+        else
             return;
-        }
 
-        transform.position = new Vector3(basePos.x + ((clickOrigin.x - dragOrigin.x) * .01f), basePos.y + ((clickOrigin.y - dragOrigin.y) * .01f), -10);
+        cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 1, 7);
 
         Camera camera = Camera.main;
         Vector3 bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
         Vector3 topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
-        Debug.Log($"bottomLeft::{bottomLeft}, topRight::{topRight}");
-
-        Debug.Log(targetSprite.size);
+        
         float spriteWidth = targetSprite.size.x / 2;
         float spriteHeight = targetSprite.size.y / 2;
 
