@@ -7,7 +7,7 @@ public class GameResult : UIBase {
     public Text lblElapsedTime;
 
     public void SetData(float elapsedTime) {
-        lblElapsedTime.text = Common.GetShortTimerFormat(elapsedTime);
+        lblElapsedTime.text = Common.GetTimerFormat(elapsedTime);
     }
 
     public void OnBtnRestartClick() {

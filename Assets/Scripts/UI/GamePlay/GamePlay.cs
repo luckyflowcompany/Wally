@@ -24,6 +24,10 @@ public class GamePlay : UIBase {
         Common.ToggleActive(lblFindCount.gameObject, true);
 
         UpdateDragonSlots();
+
+        
+        float t = Mathf.InverseLerp(Constant.ORTHOGRAPHIC_SIZE_MAX, Constant.ORTHOGRAPHIC_SIZE_MIN, Camera.main.orthographicSize);
+        sldZoom.SetValueWithoutNotify(t);
     }
 
     public void UpdateDragonSlots() {

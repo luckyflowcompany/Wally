@@ -21,7 +21,7 @@ public class Zoom : MonoBehaviour {
     private void OnZoom(object[] data) {
         float t = (float)data[0];
 
-        cam.orthographicSize = Mathf.Lerp(7, 1, t);
+        cam.orthographicSize = Mathf.Lerp(Constant.ORTHOGRAPHIC_SIZE_MAX, Constant.ORTHOGRAPHIC_SIZE_MIN, t);
 
         Camera camera = Camera.main;
         Vector3 bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
@@ -51,21 +51,6 @@ public class Zoom : MonoBehaviour {
 
     private void OnDisable() {
         EventManager.Remove(EventEnum.Zoom, OnZoom);
-    }
-
-    private void Update() {
-        return;
-
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            cam.orthographicSize += zoomSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow)) {
-            cam.orthographicSize -= zoomSpeed * Time.deltaTime;
-        }
-        else
-            return;
-
-        SetZoom();
     }
 
     private void SetZoom() {

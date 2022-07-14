@@ -31,7 +31,12 @@ public class MainScenePresenter : MonoBehaviour {
         GamePlay gamePlayUI = UIManager.instance.GetUI<GamePlay>(UI_NAME.GamePlay, true);
         gamePlayUI.UpdateDragonSlots();
 
-        if (UserDataModel.instance.listFindID.Count == Constant.TOTAL_DRAGON_COUNT) {
+        
+        long completeCount = Constant.TOTAL_DRAGON_COUNT;
+        if (Constant.TEST_MODE)
+            completeCount = 1;
+
+        if (UserDataModel.instance.listFindID.Count == completeCount) {
             elapsedTime = Time.time - startTime;
             GameResult gameResultUI = UIManager.instance.GetUI<GameResult>(UI_NAME.GameResult);
             gameResultUI.SetData(elapsedTime);
@@ -46,11 +51,27 @@ public class MainScenePresenter : MonoBehaviour {
     }
 
     private void PlayGame() {
+        StartCoroutine(JobZoomIn());
+    }
+
+    IEnumerator JobZoomIn() {
         UserDataModel.instance.listFindID.Clear();
 
         Title title = UIManager.instance.GetUI<Title>(UI_NAME.Title, false);
         if (title != null)
             title.Hide();
+
+        Camera cam = Camera.main;
+        float startSize = cam.orthographicSize;
+        float duration = 1.0f;
+        float zoomStartTime = Time.time;
+
+        float elapsedTime;
+        do {
+            elapsedTime = Time.time - zoomStartTime;
+            cam.orthographicSize = Mathf.Lerp(startSize, Constant.ORTHOGRAPHIC_SIZE_MAX, elapsedTime / duration);
+            yield return new WaitForEndOfFrame();
+        } while (elapsedTime <= duration);
         
         GamePlay gamePlay = UIManager.instance.GetUI<GamePlay>(UI_NAME.GamePlay);
         gamePlay.SetData();
