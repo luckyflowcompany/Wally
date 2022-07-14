@@ -52,4 +52,8 @@ public class UIBase : MonoBehaviour {
         UIBase[] uis = transform.parent.GetComponentsInChildren<UIBase>(true);
         transform.SetSiblingIndex(uis.Length - 1);
     }
+
+    public virtual void SetData() {
+
+    }
 }

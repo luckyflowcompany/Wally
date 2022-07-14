@@ -8,6 +8,11 @@ public enum UI_NAME {
     NONE = -1,
     DEFAULT = 0,
 
+    Title,
+    GamePlay,
+    Option,
+    GameResult,
+
     GET_UI_END,
 }
 
@@ -182,6 +187,8 @@ public class UIManager : MonoBehaviour {
             folderPath = $"/{uiOrderData.folderName}";
 
         switch ((CANVAS_ORDER)uiOrderData.order) {
+            case CANVAS_ORDER.MENU_20:
+                return $"Menus{folderPath}";
             case CANVAS_ORDER.PAGE:
                 return $"Pages{folderPath}";
 

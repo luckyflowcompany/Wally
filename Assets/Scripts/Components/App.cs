@@ -141,6 +141,7 @@ public class App : MonoBehaviour {
     private IEnumerator JobInitScene(SCENE_NAME scene) {
         switch (scene) {
             case SCENE_NAME.Main:
+                //MainScenePresenter.instance.SetData();
                 break;
 
             case SCENE_NAME.Dungeon:

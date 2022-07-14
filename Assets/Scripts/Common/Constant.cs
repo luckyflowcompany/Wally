@@ -18,4 +18,6 @@ public class Constant {
 
     public const string SKIN_ID_PATH = "_SKIN_ID";
     public const string LANGUAGE_PATH = "_LANGUAGE";
+
+    public const long TOTAL_DRAGON_COUNT = 6;
 }

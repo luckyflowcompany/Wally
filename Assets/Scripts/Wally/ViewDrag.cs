@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ViewDrag : MonoBehaviour {
     public SpriteRenderer targetSprite;
@@ -8,6 +9,9 @@ public class ViewDrag : MonoBehaviour {
     private Vector3 basePos = Vector3.zero; //Where should the camera be initially?
 
     void Update() {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (Input.GetMouseButton(0)) {
             if (clickOrigin == Vector3.zero) {
                 clickOrigin = Input.mousePosition;
