@@ -25,27 +25,23 @@ public class Answer : MonoBehaviour, IPointerClickHandler {
         if (UserDataModel.instance.listFindID.Contains(id) == false)
             return;
 
-        if (objFocus == null)
-            return;
-
-        if (objFocus.activeSelf) {
-            objFocus.SetActive(false);
-        }
-        else {
-            objFocus.SetActive(true);
-        }
+        objFocus.SetActive(true);
     }
 
     private void OnDisable() {
-        
+        EventManager.Remove(EventEnum.DragonSlotClick, OnDragonSlotClick);
     }
 
     public void OnPointerClick(PointerEventData eventData) {
         if (MainScenePresenter.instance.playing == false)
             return;
 
-        if (UserDataModel.instance.listFindID.Contains(id))
+        if (objFocus.activeSelf)
+            objFocus.SetActive(false);
+
+        if (UserDataModel.instance.listFindID.Contains(id)) {
             return;
+        }
 
         SoundManager.instance.PlayEffect(LuckyFlow.EnumDefine.SOUND_CLIP_EFFECT.found);
 
