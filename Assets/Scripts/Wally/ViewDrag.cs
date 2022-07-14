@@ -9,7 +9,7 @@ public class ViewDrag : MonoBehaviour {
     private Vector3 basePos = Vector3.zero; //Where should the camera be initially?
 
     void Update() {
-        if (MainScenePresenter.instance == null || MainScenePresenter.instance.playing == false)
+        if (MainScenePresenter.instance.playing == false)
             return;
 
         if (EventSystem.current.IsPointerOverGameObject())

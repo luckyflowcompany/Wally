@@ -13,6 +13,11 @@ public class Answer : MonoBehaviour, IPointerClickHandler {
         if (MainScenePresenter.instance.playing == false)
             return;
 
+        if (UserDataModel.instance.listFindID.Contains(id))
+            return;
+
+        SoundManager.instance.PlayEffect(LuckyFlow.EnumDefine.SOUND_CLIP_EFFECT.found);
+
         Common.ToggleActive(objCorrect, true);
         Common.ToggleActive(objEffect, true);
 

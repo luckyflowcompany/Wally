@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6574365077845386612}
   - component: {fileID: 1722319237073483283}
   - component: {fileID: 8580160829379506475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Derbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4895,7 +4895,7 @@ GameObject:
   - component: {fileID: 6767116120153837060}
   - component: {fileID: 4497547331623303773}
   - component: {fileID: 4946920495148614508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: vfx_Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +4916,7 @@ Transform:
   m_Children:
   - {fileID: 6574365077845386612}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &4497547331623303773
 ParticleSystem:
@@ -4933,7 +4933,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9738,7 +9738,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

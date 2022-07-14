@@ -95,5 +95,7 @@ public class MainScenePresenter : MonoBehaviour {
             title.SetData();
             title.Show();
         }
+
+        App.instance.PlayMainBGM();
     }
 }

@@ -116,7 +116,7 @@ Transform:
   - {fileID: 1689189836076494671}
   - {fileID: 2226735691742076351}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1689189836647196606
 MonoBehaviour:
@@ -161,7 +161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2226735691742076351
 Transform:
   m_ObjectHideFlags: 0
@@ -189,6 +189,30 @@ PrefabInstance:
     - target: {fileID: 3209003595323708912, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
       propertyPath: m_Name
       value: vfx_Correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209003595323708912, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209003595323708912, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209693079929527388, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209752901581959494, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209936985697339540, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210610695552564144, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3214921048021830674, guid: 91130e5765e104a1db99ab383ee4437c, type: 3}
       propertyPath: m_RootOrder

@@ -5,6 +5,8 @@ namespace LuckyFlow.EnumDefine {
     [Serializable]
     public enum SOUND_CLIP_EFFECT { //파일명 추가
         NONE = 0,
+        click,
+        found,
     }
 
     //BGM 목록
