@@ -464,9 +464,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -951,6 +951,10 @@ PrefabInstance:
       propertyPath: environmentPresets.Array.data[4]
       value: 
       objectReference: {fileID: 734915977}
+    - target: {fileID: 1354134755406736903, guid: bd4473cb2e1a301469f080da9bd92ac3, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4416279608668994, guid: bd4473cb2e1a301469f080da9bd92ac3, type: 3}
