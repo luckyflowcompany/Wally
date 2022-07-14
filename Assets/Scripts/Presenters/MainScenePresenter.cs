@@ -9,42 +9,71 @@ public class MainScenePresenter : MonoBehaviour {
 
     public bool playing;
 
+    private float startTime;
+    private float elapsedTime;
+
     private void Awake() {
         instance = this;
         playing = false;
     }
 
-    private void Start() {
-        SetData();
-    }
-
     private void OnEnable() {
         EventManager.Register(EventEnum.PlayGame, OnPlayGame);
-        playing = true;
+        EventManager.Register(EventEnum.FindDragon, OnFindDragon);
+    }
+
+    private void OnFindDragon(object[] data) {
+        long id = (long)data[0];
+        if (UserDataModel.instance.listFindID.Contains(id))
+            return;
+
+        UserDataModel.instance.AddFindID(id);
+        GamePlay gamePlayUI = UIManager.instance.GetUI<GamePlay>(UI_NAME.GamePlay, true);
+        gamePlayUI.UpdateDragonSlots();
+
+        if (UserDataModel.instance.listFindID.Count == Constant.TOTAL_DRAGON_COUNT) {
+        //if (UserDataModel.instance.listFindID.Count == 1) {
+            elapsedTime = Time.time - startTime;
+            GameResult gameResultUI = UIManager.instance.GetUI<GameResult>(UI_NAME.GameResult);
+            gameResultUI.SetData(elapsedTime);
+            gameResultUI.Show();
+
+            gamePlayUI.Hide();
+        }
     }
 
     private void OnPlayGame(object[] data) {
-        ToggleUI<Title>(UI_NAME.Title, false);
-        ToggleUI<GamePlay>(UI_NAME.GamePlay, true);
+        PlayGame();
+    }
 
+    private void PlayGame() {
         UserDataModel.instance.listFindID.Clear();
+
+        Title title = UIManager.instance.GetUI<Title>(UI_NAME.Title, false);
+        if (title != null)
+            title.Hide();
+        
+        GamePlay gamePlay = UIManager.instance.GetUI<GamePlay>(UI_NAME.GamePlay);
+        gamePlay.SetData();
+        gamePlay.Show();
+
+        playing = true;
+        startTime = Time.time;
     }
 
     private void OnDisable() {
         EventManager.Remove(EventEnum.PlayGame, OnPlayGame);
+        EventManager.Remove(EventEnum.FindDragon, OnFindDragon);
     }
 
-    public void SetData() {
-        ToggleUI<Title>(UI_NAME.Title, true);
-    }
-
-    public void ToggleUI<T>(UI_NAME uiName, bool show) where T : UIBase {
-        T ui = UIManager.instance.GetUI<T>(uiName);
-        if (show) {
-            ui.SetData();
-            ui.Show();
+    public void SetData(bool playGame = false) {
+        if (playGame) {
+            PlayGame();
         }
-        else
-            ui.Hide();
+        else {
+            Title title = UIManager.instance.GetUI<Title>(UI_NAME.Title);
+            title.SetData();
+            title.Show();
+        }
     }
 }

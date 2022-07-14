@@ -58,6 +58,8 @@ public class GamePlay : UIBase {
     }
 
     public void OnBtnSettingClick() {
-
+        Option option = UIManager.instance.GetUI<Option>(UI_NAME.Option);
+        option.SetData();
+        option.Show();
     }
 }

@@ -12,8 +12,8 @@ public class Common {
         double minute = time % 3600 / 60;
         double second = time % 3600 % 60;
         if ((int)days == 0)
-            return string.Format("{0:00}:{1:00}:{2:00}", (int)hours, (int)minute, (int)second);
-        return string.Format("{0:00}D  {1:00}:{2:00}:{3:00}", (int)days, (int)hours, (int)minute, (int)second);
+            return string.Format("{0:00}' {1:00}' {2:00}'", (int)hours, (int)minute, (int)second);
+        return string.Format("{0:00}D  {1:00}' {2:00}' {3:00}'", (int)days, (int)hours, (int)minute, (int)second);
     }
 
     public static string GetCommaFormat(double value) {
@@ -358,5 +358,31 @@ public class Common {
         DateTime date = origin.AddSeconds(time);
         DateTime localDate = TimeZoneInfo.ConvertTimeFromUtc(date, TimeZoneInfo.Local);
         return localDate.ToString("HH:mm");
+    }
+
+    public static string GetShortTimerFormat(float time) {
+        int days = (int)( time / 3600 / 24 );
+        int hours = (int)( time / 3600 % 24 );
+        int minute = (int)( time % 3600 / 60 );
+        int second = (int)Math.Ceiling(time % 3600 % 60);
+
+        string dayTxt = "'";
+        string hourTxt = "'";
+        string minTxt = "'";
+        string secTxt = "'";
+
+        if (days > 0)
+            return string.Format("{0:0}{1}", days, dayTxt);
+
+        else if (hours > 0)
+            return string.Format("{0:0}{1}", hours, hourTxt);
+
+        else if (minute > 0)
+            return string.Format("{0:0}{1}", minute, minTxt);
+
+        else if (second > 0)
+            return string.Format("{0:0}{1}", second, secTxt);
+
+        return "";
     }
 }
