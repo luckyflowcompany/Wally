@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1109557744, guid: 15ce3abada677fe41854b19eccaeaf21, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 977307469690629472, guid: 15ce3abada677fe41854b19eccaeaf21, type: 3}
       propertyPath: m_Name
       value: GlobalTitle
