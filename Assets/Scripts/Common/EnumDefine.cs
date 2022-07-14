@@ -7,8 +7,6 @@ namespace LuckyFlow.EnumDefine {
         NONE = 0,
         click,
         found,
-        ambient,
-        victory,
     }
 
     //BGM 목록
@@ -16,6 +14,12 @@ namespace LuckyFlow.EnumDefine {
     public enum SOUND_CLIP_BGM {   //파일명 추가
         NONE = 0,
         BGM01,
+    }
+
+    public enum SOUND_CLIP_ENVIRONMENT {   //파일명 추가
+        NONE = 0,
+        ambient,
+        victory,
     }
 
     //언어

@@ -15,15 +15,18 @@ public class SoundManager : MonoBehaviour {
     public enum SOUND_TYPE {
         EFFECT,
         BGM,
+        ENVIRONMENT,
     }
 
     public static SoundManager instance;
 
     public List<AudioSource> bgmPresets;
     public List<AudioSource> effectPresets;
+    public List<AudioSource> environmentPresets;
 
     public Transform bgmParent;
     public Transform effectParent;
+    public Transform environmentParent;
 
     public ReusableAudioSource prefabAudioSource;
 
@@ -35,8 +38,12 @@ public class SoundManager : MonoBehaviour {
     private Queue<ReusableAudioSource> effectQueue = new Queue<ReusableAudioSource>();
     private Queue<ReusableAudioSource> effectPlayingQueue = new Queue<ReusableAudioSource>();
 
+    private Queue<ReusableAudioSource> environmentQueue = new Queue<ReusableAudioSource>();
+    private Queue<ReusableAudioSource> environmentPlayingQueue = new Queue<ReusableAudioSource>();
+
     private List<AudioClip> bgmClips = new List<AudioClip>();
     private List<AudioClip> effectClips = new List<AudioClip>();
+    private List<AudioClip> environmentClips = new List<AudioClip>();
 
     private void Awake() {
         instance = this;
@@ -53,6 +60,7 @@ public class SoundManager : MonoBehaviour {
         //폴더에 있는 클립들을 다 불러온다.
         bgmClips.AddRange(Resources.LoadAll<AudioClip>("Audios/BGM"));
         effectClips.AddRange(Resources.LoadAll<AudioClip>("Audios/Effect"));
+        environmentClips.AddRange(Resources.LoadAll<AudioClip>("Audios/Environment"));
     }
 
     private void CreateQueue() {
@@ -60,6 +68,11 @@ public class SoundManager : MonoBehaviour {
         bgmSource.Init(SOUND_TYPE.BGM);
         bgmSource.gameObject.SetActive(false);
         bgmQueue.Enqueue(bgmSource);
+
+        ReusableAudioSource environmentSource = Instantiate(prefabAudioSource, environmentParent);
+        environmentSource.Init(SOUND_TYPE.ENVIRONMENT);
+        environmentSource.gameObject.SetActive(false);
+        environmentQueue.Enqueue(environmentSource);
 
         for (int i = 0; i < Constant.MULTIPLE_EFFECT_PLAY_MAX; i++) {
             ReusableAudioSource effectSource = Instantiate(prefabAudioSource, effectParent);
@@ -80,6 +93,21 @@ public class SoundManager : MonoBehaviour {
         source.SetData(clip, preset);
 
         bgmPlayingQueue.Enqueue(source);
+
+        source.Play();
+    }
+
+    public void PlayEnvironment(SOUND_CLIP_ENVIRONMENT clipName, SOUND_PRESET presetName = SOUND_PRESET.DEFAULT) {
+        if (clipName == SOUND_CLIP_ENVIRONMENT.NONE)
+            return;
+
+        ReusableAudioSource source = GetSource(SOUND_TYPE.ENVIRONMENT);
+
+        AudioSource preset = GetEnvironmentPreset(presetName);
+        AudioClip clip = GetEnvironmentClip(clipName);
+        source.SetData(clip, preset);
+
+        environmentPlayingQueue.Enqueue(source);
 
         source.Play();
     }
@@ -119,12 +147,26 @@ public class SoundManager : MonoBehaviour {
         return null;
     }
 
+    private AudioClip GetEnvironmentClip(SOUND_CLIP_ENVIRONMENT clipName) {
+        for (int i = 0; i < environmentClips.Count; i++) {
+            if (environmentClips[i].name == clipName.ToString())
+                return environmentClips[i];
+        }
+
+        Debug.LogWarning("클립 없음::" + clipName.ToString());
+        return null;
+    }
+
     private ReusableAudioSource GetSource(SOUND_TYPE soundType) {
         Queue<ReusableAudioSource> queue;
         Queue<ReusableAudioSource> playingQueue;
         if (soundType == SOUND_TYPE.BGM) {
             queue = bgmQueue;
             playingQueue = bgmPlayingQueue;
+        }
+        else if (soundType == SOUND_TYPE.ENVIRONMENT) {
+            queue = environmentQueue;
+            playingQueue = environmentPlayingQueue;
         }
         else {
             queue = effectQueue;
@@ -154,6 +196,16 @@ public class SoundManager : MonoBehaviour {
     private AudioSource GetBGMPreset(SOUND_PRESET preset) {
         for (int i = 0; i < bgmPresets.Count; i++) {
             if (bgmPresets[i].name == preset.ToString())
+                return bgmPresets[i];
+        }
+
+        Debug.LogWarning("프리셋이 존재하지 않음::" + preset.ToString());
+        return null;
+    }
+
+    private AudioSource GetEnvironmentPreset(SOUND_PRESET preset) {
+        for (int i = 0; i < environmentPresets.Count; i++) {
+            if (environmentPresets[i].name == preset.ToString())
                 return bgmPresets[i];
         }
 

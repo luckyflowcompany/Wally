@@ -8,6 +8,7 @@ public class GameResult : UIBase {
 
     public void SetData(float elapsedTime) {
         lblElapsedTime.text = Common.GetTimerFormat(elapsedTime);
+        SoundManager.instance.PlayEnvironment(LuckyFlow.EnumDefine.SOUND_CLIP_ENVIRONMENT.victory);
     }
 
     public void OnBtnRestartClick() {
