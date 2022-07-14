@@ -31,8 +31,12 @@ public class MainScenePresenter : MonoBehaviour {
         GamePlay gamePlayUI = UIManager.instance.GetUI<GamePlay>(UI_NAME.GamePlay, true);
         gamePlayUI.UpdateDragonSlots();
 
-        if (UserDataModel.instance.listFindID.Count == Constant.TOTAL_DRAGON_COUNT) {
-        //if (UserDataModel.instance.listFindID.Count == 1) {
+        
+        long completeCount = Constant.TOTAL_DRAGON_COUNT;
+        if (Constant.TEST_MODE)
+            completeCount = 1;
+
+        if (UserDataModel.instance.listFindID.Count == completeCount) {
             elapsedTime = Time.time - startTime;
             GameResult gameResultUI = UIManager.instance.GetUI<GameResult>(UI_NAME.GameResult);
             gameResultUI.SetData(elapsedTime);
