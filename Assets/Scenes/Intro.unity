@@ -369,6 +369,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1109557744, guid: 15ce3abada677fe41854b19eccaeaf21, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 977307469690629472, guid: 15ce3abada677fe41854b19eccaeaf21, type: 3}
       propertyPath: m_Name
       value: GlobalTitle
@@ -417,8 +421,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5697101625510639094, guid: 15ce3abada677fe41854b19eccaeaf21, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 8725057892857199207, guid: 15ce3abada677fe41854b19eccaeaf21, type: 3}
+      propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

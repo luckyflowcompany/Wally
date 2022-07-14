@@ -97,5 +97,6 @@ public class MainScenePresenter : MonoBehaviour {
         }
 
         App.instance.PlayMainBGM();
+        SoundManager.instance.PlayEnvironment(LuckyFlow.EnumDefine.SOUND_CLIP_ENVIRONMENT.ambient);
     }
 }

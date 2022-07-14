@@ -31,7 +31,8 @@ public class ReusableAudioSource : MonoBehaviour {
     }
 
     private void OnEffectMute(object[] args) {
-        if (soundType != SoundManager.SOUND_TYPE.EFFECT)
+        if (soundType != SoundManager.SOUND_TYPE.EFFECT &&
+            soundType != SoundManager.SOUND_TYPE.ENVIRONMENT)
             return;
 
         audioSource.volume = 0;
@@ -45,7 +46,8 @@ public class ReusableAudioSource : MonoBehaviour {
     }
 
     private void OnEffectVolumeChanged(object[] args) {
-        if (soundType != SoundManager.SOUND_TYPE.EFFECT)
+        if (soundType != SoundManager.SOUND_TYPE.EFFECT &&
+            soundType != SoundManager.SOUND_TYPE.ENVIRONMENT)
             return;
 
         float volumeRatio = (float)args[0];
@@ -94,16 +96,17 @@ public class ReusableAudioSource : MonoBehaviour {
 
     private float GetVolume() {
         float volume = 0;
-        if (soundType == SoundManager.SOUND_TYPE.EFFECT) 
+        if (soundType == SoundManager.SOUND_TYPE.EFFECT ||
+            soundType == SoundManager.SOUND_TYPE.ENVIRONMENT) 
             volume = (float)(preset.volume * UserDataModel.instance.gameOptions.effectVolumeRatio);
         else if (soundType == SoundManager.SOUND_TYPE.BGM) 
             volume = (float)(preset.volume * UserDataModel.instance.gameOptions.bgmVolumeRatio);
-
         return volume;
     }
 
     private bool IsMute() {
-        if (soundType == SoundManager.SOUND_TYPE.EFFECT) 
+        if (soundType == SoundManager.SOUND_TYPE.EFFECT ||
+            soundType == SoundManager.SOUND_TYPE.ENVIRONMENT) 
             return UserDataModel.instance.gameOptions.effectVolumeRatio == 0;
         else 
             return UserDataModel.instance.gameOptions.bgmVolumeRatio == 0;
@@ -111,7 +114,8 @@ public class ReusableAudioSource : MonoBehaviour {
 
     public void Play() {
         gameObject.SetActive(true);
-        if (soundType == SoundManager.SOUND_TYPE.BGM) 
+        if (soundType == SoundManager.SOUND_TYPE.BGM ||
+            soundType == SoundManager.SOUND_TYPE.ENVIRONMENT) 
             audioSource.Play();
         else
             audioSource.PlayOneShot(audioSource.clip);

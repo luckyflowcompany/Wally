@@ -22,11 +22,13 @@ public class Option : UIBase {
     }
 
     public void OnEffectVolumeChanged() {
+        UserDataModel.instance.gameOptions.effectVolumeRatio = sldEffect.value;
         EventManager.Notify(EventEnum.EffectVolumeChanged, sldEffect.value);
         Debug.Log($"ChangeEffectVolume::{sldEffect.value}");
     }
 
     public void OnBGMVolumeChanged() {
+        UserDataModel.instance.gameOptions.bgmVolumeRatio = sldBGM.value;
         EventManager.Notify(EventEnum.BGMVolumeChanged, sldBGM.value);
     }
 }
