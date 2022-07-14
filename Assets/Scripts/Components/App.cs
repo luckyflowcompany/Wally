@@ -15,9 +15,7 @@ public class App : MonoBehaviour {
 
     public enum SCENE_NAME {
         Intro,
-        Title,
         Main,
-        Dungeon,
     }
 
     public static App instance;
@@ -32,6 +30,8 @@ public class App : MonoBehaviour {
     private bool changeSceneInProgress = false;
 
     private bool showQuest;
+
+    private bool playGame = false;
 
     public bool ChangeSceneInProgress {
         set {
@@ -131,6 +131,11 @@ public class App : MonoBehaviour {
 
     }
 
+    public void RestartGame() {
+        playGame = true;
+        ChangeScene(SCENE_NAME.Main);
+    }
+
     private T ToEnum<T>(string value) {
         if (Enum.IsDefined(typeof(T), value) == false)
             return default(T);
@@ -141,9 +146,8 @@ public class App : MonoBehaviour {
     private IEnumerator JobInitScene(SCENE_NAME scene) {
         switch (scene) {
             case SCENE_NAME.Main:
-                break;
-
-            case SCENE_NAME.Dungeon:
+                MainScenePresenter.instance.SetData(playGame);
+                playGame = false;
                 break;
 
             default:

@@ -1,16 +1,21 @@
+using LuckyFlow.Event;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Answer : MonoBehaviour {
+    public long id;
     public GameObject objCorrect;
+    public GameObject objEffect;
 
     private void Awake() {
-        objCorrect.SetActive(true);
+        
     }
 
     void OnMouseDown() {
-        Debug.Log("MouseDown!!");
-        objCorrect.SetActive(false);
+        Common.ToggleActive(objCorrect, true);
+        Common.ToggleActive(objEffect, true);
+
+        EventManager.Notify(EventEnum.FindDragon, id);
     }
 }

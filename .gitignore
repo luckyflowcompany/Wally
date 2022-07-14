@@ -16,3 +16,4 @@ BuildOutput/
 /UserSettings/Layouts/*.dwlt
 /*.json
 /UserSettings/EditorUserSettings.asset
+/WebGL Builds
