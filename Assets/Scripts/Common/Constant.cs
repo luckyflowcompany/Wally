@@ -20,4 +20,7 @@ public class Constant {
     public const string LANGUAGE_PATH = "_LANGUAGE";
 
     public const long TOTAL_DRAGON_COUNT = 6;
+
+    public const float ORTHOGRAPHIC_SIZE_MIN = 1.5f;
+    public const float ORTHOGRAPHIC_SIZE_MAX = 4.5f;
 }
