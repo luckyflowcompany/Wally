@@ -18,5 +18,6 @@ namespace LuckyFlow.Event {
         PlayGame,
         Zoom,
         FindDragon,
+        DragonSlotClick,
     }
 }

@@ -1,4 +1,5 @@
 using LuckyFlow.Event;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,36 @@ public class Answer : MonoBehaviour, IPointerClickHandler {
     public long id;
     public GameObject objCorrect;
     public GameObject objEffect;
+
+    public GameObject objFocus;
+
+    private void OnEnable() {
+        EventManager.Register(EventEnum.DragonSlotClick, OnDragonSlotClick);
+    }
+
+    private void OnDragonSlotClick(object[] data) {
+        long inputID = (long)data[0];
+        if (inputID != id)
+            return;
+
+        //이미 찾았으면 리턴
+        if (UserDataModel.instance.listFindID.Contains(id))
+            return;
+
+        if (objFocus == null)
+            return;
+
+        if (objFocus.activeSelf) {
+            objFocus.SetActive(false);
+        }
+        else {
+            objFocus.SetActive(true);
+        }
+    }
+
+    private void OnDisable() {
+        
+    }
 
     public void OnPointerClick(PointerEventData eventData) {
         if (MainScenePresenter.instance.playing == false)
