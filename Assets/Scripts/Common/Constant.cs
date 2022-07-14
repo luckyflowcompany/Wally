@@ -24,5 +24,5 @@ public class Constant {
     public const float ORTHOGRAPHIC_SIZE_MIN = 1.5f;
     public const float ORTHOGRAPHIC_SIZE_MAX = 4.5f;
 
-    public static bool TEST_MODE = true;
+    public static bool TEST_MODE = false;
 }
