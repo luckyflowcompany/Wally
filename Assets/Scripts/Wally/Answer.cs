@@ -22,7 +22,7 @@ public class Answer : MonoBehaviour, IPointerClickHandler {
             return;
 
         //이미 찾았으면 리턴
-        if (UserDataModel.instance.listFindID.Contains(id))
+        if (UserDataModel.instance.listFindID.Contains(id) == false)
             return;
 
         if (objFocus == null)

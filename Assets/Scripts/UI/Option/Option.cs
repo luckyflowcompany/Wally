@@ -23,6 +23,7 @@ public class Option : UIBase {
 
     public void OnEffectVolumeChanged() {
         EventManager.Notify(EventEnum.EffectVolumeChanged, sldEffect.value);
+        Debug.Log($"ChangeEffectVolume::{sldEffect.value}");
     }
 
     public void OnBGMVolumeChanged() {

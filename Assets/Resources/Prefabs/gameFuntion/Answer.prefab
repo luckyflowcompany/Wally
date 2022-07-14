@@ -134,6 +134,7 @@ MonoBehaviour:
   id: 0
   objCorrect: {fileID: 1689189836076494668}
   objEffect: {fileID: 7515240283764155768}
+  objFocus: {fileID: 2401874226793864613}
 --- !u!65 &1689189836647196601
 BoxCollider:
   m_ObjectHideFlags: 0
