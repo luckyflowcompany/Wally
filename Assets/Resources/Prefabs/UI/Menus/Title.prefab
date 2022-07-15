@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -5}
-  m_SizeDelta: {x: 863.1136, y: 25}
+  m_SizeDelta: {x: 863.1136, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &228031685
 CanvasRenderer:
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIND THE DRAGONS
+  m_Text: FIND THESE DRAGONS
 --- !u!1 &1024506858
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -5}
-  m_SizeDelta: {x: 863.1136, y: 25}
+  m_SizeDelta: {x: 863.1136, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1024506861
 CanvasRenderer:
@@ -387,12 +387,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC0CC\uBC15\uB79C\uB4DC\uB294 \uC624\uB298 MTDZ \uCD95\uC81C\uB97C \uC5F4\uC5C8\uC2B5\uB2C8\uB2E4!
-    \n\uBAA8\uB450 \uC790\uC2E0\uC774 \uC88B\uC544\uD558\uB294 \uB4DC\uB798\uACE4\uC758
-    \uC637\uC744 \uC785\uACE0 \uCD95\uC81C\uB97C \uC990\uAE30\uB7EC \uB180\uB7EC\uC624\uC138\uC694.\n\uC6B4\uC774
-    \uC88B\uB2E4\uBA74 \uB180\uACE0\uC788\uB294 \uB4DC\uB798\uACE4\uC744 \uB9CC\uB098\uC2E4
-    \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n\uAC00\uC0C1\uC138\uACC4\uC758 \uC0CC\uBC15\uB79C\uB4DC\uB97C
-    \uD0D0\uD5D8\uD558\uBA70 \uAD70\uC911 \uC18D\uC758 \uB4DC\uB798\uACE4\uC744 \uCC3E\uC73C\uC138\uC694.\n"
+  m_Text: "\n\uC0CC\uB4DC\uBC15\uC2A4 \uB79C\uB4DC\uC5D0 <b>'MTDz \uCD95\uC81C\uC758
+    \uB0A0'</b>\uC774 \uC5F4\uB838\uC2B5\uB2C8\uB2E4!\n\n\uBAA8\uB450 \uC790\uC2E0\uC774
+    \uC88B\uC544\uD558\uB294 \uB4DC\uB798\uACE4\uC758 \uC637\uC744 \uC785\uACE0 \uCD95\uC81C\uC5D0
+    \uB180\uB7EC\uC624\uC138\uC694.\n\n\uB2E4\uC591\uD55C \uB180\uC774\uAE30\uAD6C\uB97C
+    \uD0C0\uBA70, \uCD95\uC81C\uB97C \uC990\uAE30\uACE0 \uC788\uB294 <b>\uBA54\uD0C0\uD1A0\uC774
+    \uB4DC\uB798\uACE4\uB4E4</b>\uC744 \uCC3E\uC73C\uC138\uC694 :) \n\n\uFEFF"
 --- !u!1 &47245210425478243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,8 +1725,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 120, y: 338}
-  m_SizeDelta: {x: 1000, y: 100}
+  m_AnchoredPosition: {x: 120, y: 329}
+  m_SizeDelta: {x: 1000, y: 130}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &2652436420777623932
 CanvasRenderer:
@@ -1762,7 +1762,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 14
-    m_MaxSize: 120
+    m_MaxSize: 200
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1891,7 +1891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1583281964272018621
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2043,7 +2043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3985008925714965514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2314,7 +2314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8794715253640712863
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2715,7 +2715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8578250326061508881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2775,7 +2775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 120, y: 249.00002}
+  m_AnchoredPosition: {x: 120, y: 229.00002}
   m_SizeDelta: {x: 1000, y: 60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5890006442111603909
@@ -2819,7 +2819,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- MTDz DAY -'
+  m_Text: '- FIND THE DRANGONS -'
 --- !u!114 &47245211099599411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,7 +3055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4549805710658035553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3417,7 +3417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4762729351893656398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3841,8 +3841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 100}
-  m_SizeDelta: {x: 1040.7896, y: 262.5475}
+  m_AnchoredPosition: {x: 100, y: 120}
+  m_SizeDelta: {x: 1040.7896, y: 232.55}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3713829086594185147
 CanvasRenderer:

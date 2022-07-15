@@ -2157,7 +2157,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: 494, y: 25}
+  m_SizeDelta: {x: 494, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1917841289040393695
 CanvasRenderer:
@@ -2200,7 +2200,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TIME SPEND
+  m_Text: TIME SPENT
 --- !u!1 &1917841289045931288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3800,6 +3800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1917841289958857123}
   - component: {fileID: 1499223341642849212}
+  - component: {fileID: 1801010145294523508}
   m_Layer: 5
   m_Name: posEffect
   m_TagString: Untagged
@@ -3851,6 +3852,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1801010145294523508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917841289958857122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1055af40adcdf6b409fb1a37e0999650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips: 0400000000000000000000000000000000000000
 --- !u!1 &1917841289971585619
 GameObject:
   m_ObjectHideFlags: 0

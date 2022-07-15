@@ -1240,7 +1240,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -5}
-  m_SizeDelta: {x: 863.1136, y: 25}
+  m_SizeDelta: {x: 863.1136, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4730016718757580885
 CanvasRenderer:
@@ -1283,7 +1283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIND THE DRAGONS
+  m_Text: FIND THESE DRAGONS
 --- !u!1 &4730016718760636603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2487,7 @@ GameObject:
   - component: {fileID: 4730016719341140453}
   - component: {fileID: 4193770492416794039}
   - component: {fileID: 2908262781416767320}
+  - component: {fileID: 5165369633126867429}
   m_Layer: 5
   m_Name: BottomContainer
   m_TagString: Untagged
@@ -2571,6 +2572,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5165369633126867429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4730016719341140455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1055af40adcdf6b409fb1a37e0999650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips: 0300000000000000000000000000000000000000
 --- !u!1 &4730016719350343057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,6 +5200,8 @@ GameObject:
   - component: {fileID: 9045919237276581875}
   - component: {fileID: 1192751114150552770}
   - component: {fileID: 1234472486400515679}
+  - component: {fileID: 3497948711098640050}
+  - component: {fileID: 6927491173879296940}
   m_Layer: 5
   m_Name: lblFindCount
   m_TagString: Untagged
@@ -5255,6 +5271,36 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '1 / 6 '
+--- !u!114 &3497948711098640050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719731420237336172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &6927491173879296940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719731420237336172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &9089602567641131435
 GameObject:
   m_ObjectHideFlags: 0

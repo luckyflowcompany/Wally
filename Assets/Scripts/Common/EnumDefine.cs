@@ -7,6 +7,8 @@ namespace LuckyFlow.EnumDefine {
         NONE = 0,
         click,
         found,
+        open,
+        crowd,
     }
 
     //BGM 목록
